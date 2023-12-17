@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block title %} Toot {% endblock %}
+
+{% block body %}
+
+<br>
+
+<!-- Text area and submit button to Toot-->
+<form method="POST">
+    <textarea name="toot" id="toot" class="form-control"></textarea>
+
+    <br>
+
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Toot</button>
+    </div>
+</form>
+
+<br>
+
+<div align="center">
+    <a href="/">
+    <button type="button" class="btn btn-secondary">Back</button></a>
+</div>
+
+
+{% endblock %}

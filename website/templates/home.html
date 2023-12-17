@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<br>
+<h2 align="center">Home</h2>
+<br>
+
+<!-- Show Created Toots in Homepage -->
+<div id="posts">
+    {% for post in posts %}
+
+        <!-- Toot Border -->
+        <div class="card border-dark">
+
+            <!-- Header -->
+            <div class="card-header d-flex justify-content-between align-items-center">
+                {{post.user.username}}
+                {% if user.id == post.user_id %}
+                <div class="btn-group">
+                    <a href="/delete-post/{{post.id}}">
+                    <button 
+                    type="button" 
+                    class="btn btn-sm btn-primary" 
+                    >Delete</button>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Body -->
+            <div class="card-body">
+                <div class="card-text">{{post.data}}</div>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer text-muted">
+                {{post.date_created}}
+            </div>
+
+        </div>
+
+        <br>
+
+    {% endfor %}
+</div>
+
+<br>
+
+<div align="center">
+    <a href="/toot">
+    <button type="submit" class="btn btn-primary">Toot a Post</button></a>
+</div>
+
+{% endblock %}

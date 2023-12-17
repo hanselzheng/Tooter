@@ -1,0 +1,102 @@
+{% extends "index.html" %} 
+
+{% block title %} Registration {% endblock %} 
+
+{% block body %}
+
+<!--Signing Up-->
+<form method="POST">
+  <br>
+  <h3 align="center">Register for a New Account</h3>
+
+  <!--Username-->
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Enter username"
+    >
+  </div>
+
+
+  <!--First Name-->
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+    >
+  </div>
+
+  <!--Last Name-->
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      name="lastName"
+      placeholder="Enter last name"
+    >
+  </div>
+
+  <!--Input Birthday-->
+  <div class="form-group">
+    <label for="birthday">Birthday</label>
+    <input 
+      type="date" 
+      class="form-control" 
+      id="birthday" 
+      name="birthday" 
+    >
+  </div>
+
+  <!--Input Email-->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="example@gmail.com"
+    >
+  </div>
+
+  <!--Input Password-->
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+    >
+  </div>
+
+  <!--Confirm Password-->
+  <div class="form-group">
+    <label for="password2">Confirm Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+    >
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-primary">Register</button>
+  
+</form>
+
+{% endblock %}
