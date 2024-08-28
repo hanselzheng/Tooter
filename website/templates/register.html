@@ -18,6 +18,7 @@
       id="username"
       name="username"
       placeholder="Enter username"
+      value="{{ request.form.get('username', '') }}"
     >
   </div>
 
@@ -31,6 +32,7 @@
       id="firstName"
       name="firstName"
       placeholder="Enter first name"
+      value="{{ request.form.get('firstName', '') }}"
     >
   </div>
 
@@ -43,6 +45,7 @@
       id="lastName"
       name="lastName"
       placeholder="Enter last name"
+      value="{{ request.form.get('lastName', '') }}"
     >
   </div>
 
@@ -54,6 +57,7 @@
       class="form-control" 
       id="birthday" 
       name="birthday" 
+      value="{{ request.form.get('birthday', '') }}"
     >
   </div>
 
@@ -66,6 +70,7 @@
       id="email"
       name="email"
       placeholder="example@gmail.com"
+      value="{{ request.form.get('email', '') }}"
     >
   </div>
 
@@ -78,6 +83,7 @@
       id="password"
       name="password"
       placeholder="Enter password"
+      value="{{ request.form.get('password', '') }}"
     >
   </div>
 
@@ -90,6 +96,7 @@
       id="password2"
       name="password2"
       placeholder="Confirm password"
+      value="{{ request.form.get('password2', '') }}"
     >
   </div>
 

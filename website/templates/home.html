@@ -7,9 +7,33 @@
 <h2 align="center">Home</h2>
 <br>
 
+<!-- Below Home Header -->
+<div align="left" id="user">
+    Welcome back, 
+    <h4 class="text-primary">{{user.username}}</h4>
+</div>
+
+<div align="right">
+    <a href="/toot">
+        <button type="submit" class="btn btn-primary">Toot a Post</button>
+    </a>
+
+    <a href="/delete-user">
+        <button 
+        type="button" 
+        class="btn btn-danger">
+            Delete Account
+        </button>
+    </a>
+</div>
+
+
+
+<br>
+
 <!-- Show Created Toots in Homepage -->
 <div id="posts">
-    {% for post in posts %}
+    {% for post in posts|reverse %}
 
         <!-- Toot Border -->
         <div class="card border-dark">
@@ -22,7 +46,7 @@
                     <a href="/delete-post/{{post.id}}">
                     <button 
                     type="button" 
-                    class="btn btn-sm btn-primary" 
+                    class="btn btn-sm btn-secondary" 
                     >Delete</button>
                     </a>
                 </div>
@@ -38,7 +62,6 @@
             <div class="card-footer text-muted">
                 {{post.date_created}}
             </div>
-
         </div>
 
         <br>
@@ -48,9 +71,5 @@
 
 <br>
 
-<div align="center">
-    <a href="/toot">
-    <button type="submit" class="btn btn-primary">Toot a Post</button></a>
-</div>
 
 {% endblock %}

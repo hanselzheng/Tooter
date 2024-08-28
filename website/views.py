@@ -37,7 +37,7 @@ def create_toot():
 @views.route('/delete-post/<id>')
 @login_required
 def delete_post(id):
-    post = Toot.query.filter_by(id=id).first()
+    post = Toot.query.get_or_404(id)
 
     if post:
         if post.user_id == current_user.id:

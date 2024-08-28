@@ -19,4 +19,4 @@ class User(db.Model, UserMixin):
     birthday = db.Column(db.Integer)
     email = db.Column(db.String(20), unique=True)
     password = db.Column(db.String(80))
-    toot = db.relationship('Toot', backref='user', passive_deletes=True) # relate to Toot class
+    toot = db.relationship('Toot', backref='user', cascade="all, delete-orphan", lazy=True) # relate to Toot class

@@ -5,10 +5,6 @@ import re
 from website import db
 from flask_login import login_user, login_required, logout_user, current_user
 
-
-
-
-
 auth = Blueprint('auth', __name__)
 re_email = re.compile(r'^([a-zA-Z0-9\\_\\-\\.]+)@([a-zA-Z]+).(.+)$')
 re_password = re.compile(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[?!@#$%^&*-+]).{8,}$')
@@ -78,6 +74,33 @@ def sign_up():
             return redirect(url_for('auth.login'))
 
     return render_template("register.html", user=current_user)
+
+
+# Delete User Page
+@auth.route('/delete-user')
+@login_required
+def deleting_user():
+
+    return render_template('delete-user.html', user=current_user)
+
+
+
+
+# Delete User
+@auth.route('/delete-user/<id>/confirm')
+@login_required
+def delete_user(id):
+    account = User.query.get_or_404(id)
+
+    if account.id == current_user.id:
+        db.session.delete(account)
+        db.session.commit()
+        flash('Account deleted!', category='success')
+        return redirect(url_for('auth.login'))
+    else:
+        flash("You are not authorized to delete this account.", category="error")
+        return redirect(url_for('views.home'))
+
 
 
 # Logout Page

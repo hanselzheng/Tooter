@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title %} Permanent Account Deletion {% endblock %}
+
+{% block body %}
+
+<br>
+    <h3>Are you sure you want to delete <span class="text-primary">{{user.username}}</span>?</h3>
+<br>
+
+    <div align="center">
+        <a href="{{ url_for('auth.delete_user', id=user.id) }}">        
+        <button type="button" class="btn btn-danger">Yes, I want to delete!</button></a>
+    </div>
+
+
+<br>
+
+<div align="center">
+    <a href="{{ url_for('views.home') }}">
+    <button type="button" class="btn btn-secondary">No, nevermind.</button></a>
+</div>
+
+
+{% endblock %}
