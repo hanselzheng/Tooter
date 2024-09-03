@@ -71,13 +71,13 @@ Install the project dependencies using pip:
 pip install -r requirements.txt
 ```
 
-<br>
-
 Create .env file containing your own secret key:
 
 ```bash
 SECRET_KEY='your_own_secret_key'
 ```
+
+<br>
 
 **Running the Project**
 
