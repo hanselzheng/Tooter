@@ -1,4 +1,4 @@
-# Tooter
+# Tooter | Social Media Program
 
 Tooter is a social media platform built with Python and Flask, where users can write posts, view posts from other users, and interact within a secure environment.
 The app incorporates essential security features such as strong password confirmation, hashed database entries, and input validation to protect user data and prevent malicious attacks.
